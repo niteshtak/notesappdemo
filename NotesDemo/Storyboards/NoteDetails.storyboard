@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kdw-rg-yPj">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add NoteVC-->
+        <scene sceneID="jqV-lf-Khs">
+            <objects>
+                <viewController id="kdw-rg-yPj" customClass="AddNoteVC" customModule="notesdemo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ENR-bU-iix">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xr4-IC-rfe">
+                                <rect key="frame" x="16" y="64" width="382" height="818"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="En9-pV-iXL">
+                                        <rect key="frame" x="8" y="8" width="366" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="LGk-df-Kxv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="kdw-rg-yPj" id="x0V-cX-tCB"/>
+                                        </connections>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lOY-jV-2Be">
+                                        <rect key="frame" x="8" y="68" width="366" height="640"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="kdw-rg-yPj" id="2Rg-z4-fy6"/>
+                                        </connections>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFE-Fi-aP6">
+                                        <rect key="frame" x="8" y="728" width="366" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="G9I-vo-ETn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Add Note"/>
+                                    </button>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="20" right="8"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IY1-GU-6f5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xr4-IC-rfe" firstAttribute="top" secondItem="IY1-GU-6f5" secondAttribute="top" constant="20" id="0do-vp-Zb6"/>
+                            <constraint firstItem="Xr4-IC-rfe" firstAttribute="bottom" secondItem="IY1-GU-6f5" secondAttribute="bottom" constant="20" id="FyM-89-Tws"/>
+                            <constraint firstItem="IY1-GU-6f5" firstAttribute="trailing" secondItem="Xr4-IC-rfe" secondAttribute="trailing" constant="16" id="Nrb-3v-o83"/>
+                            <constraint firstItem="Xr4-IC-rfe" firstAttribute="leading" secondItem="IY1-GU-6f5" secondAttribute="leading" constant="16" id="SfK-68-YGo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Jz-cw-n7i"/>
+                    <connections>
+                        <outlet property="actionButton" destination="FFE-Fi-aP6" id="ORP-Ql-InU"/>
+                        <outlet property="descriptionTextView" destination="lOY-jV-2Be" id="YUk-XG-ftg"/>
+                        <outlet property="titleTextField" destination="En9-pV-iXL" id="y2T-ot-ULV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7C4-Qm-rbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2831.8840579710145" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
